@@ -1,0 +1,11 @@
+@keyframes height-grow {
+    from {
+        height: 0;
+        display: none;
+    }
+
+    to {
+        height: 100%;
+        display: block;
+    }
+}
