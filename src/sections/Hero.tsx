@@ -11,7 +11,7 @@ export default function Hero({ }: {}) {
         <section className="hero">
             {isMobile ? <Profile /> : ``}
             <h1><span>F</span>ront<span>E</span>nd</h1>
-            <img src="/warrior.png" alt="" />
+            <img src="/Warrior.png" alt="" />
             <h1 className="big">DEV</h1>
             <p><Typewriter messages={["Let's bring the future closer"]} /></p>
         </section>

@@ -12,7 +12,7 @@
                 color: $color-basic;
 
                 &::after {
-                    content: url('/union-white.png');
+                    content: url('/Union-white.png');
                 }
             }
         }
@@ -22,7 +22,7 @@
                 color: $color-basic;
 
                 &::after {
-                    content: url('/union-white.png');
+                    content: url('/Union-white.png');
                 }
             }
             .panel-content {
@@ -42,7 +42,7 @@
             background: $color-primary;
 
             &::after {
-                content: url('/union.png');
+                content: url('/Union.png');
                 position: absolute;
                 width: 22px;
                 height: 22px;
@@ -110,7 +110,7 @@
             background: $color-muted-bg;
 
             &::after {
-                content: url('/union.png');
+                content: url('/Union.png');
             }
         }
 
