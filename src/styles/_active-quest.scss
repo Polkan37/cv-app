@@ -1,0 +1,121 @@
+.active-quest {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+
+    .panel {
+
+        &:active {
+            .panel-header {
+                color: $color-basic;
+
+                &::after {
+                    content: url('/union-white.png');
+                }
+            }
+        }
+
+        &.open {
+            .panel-header {
+                color: $color-basic;
+
+                &::after {
+                    content: url('/union-white.png');
+                }
+            }
+            .panel-content {
+                max-height: 0px;
+                animation: panel-expand 2.3s ease forwards;
+            }
+        }
+        &.show {
+            .panel-content {
+                max-height: 0px;
+                animation: panel-expand 2.3s ease 3s forwards;
+            }
+        }
+
+        &-header {
+            color: $color-muted-bg;
+            background: $color-primary;
+
+            &::after {
+                content: url('/union.png');
+                position: absolute;
+                width: 22px;
+                height: 22px;
+                right: 11px;
+                top: -9px;
+                z-index: 0;
+            }
+        }
+
+        &-content {
+            overflow: hidden;
+            max-height: 0px;
+        }
+
+        &-desc {
+            background: rgba($color-primary-rgb, 0.1);
+            font-family: $ff-text;
+            font-size: $fz-primary-text;
+            color: $color-muted-text;
+            transition: all .1s ease;
+        }
+
+        & ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+
+            & li {
+                margin-bottom: 8px;
+                font-size: $fz-primary-text;
+                font-family: $ff-text;
+                color: $color-basic;
+                text-transform: uppercase;
+                line-height: 1.2;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                & .panel-title {
+                    color: $color-basic;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                & p {
+                    color: $color-muted-text;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                & p.primary {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    .panel.no-data {
+        cursor: default;
+
+
+        .panel-header {
+            color: $color-bg;
+            background: $color-muted-bg;
+
+            &::after {
+                content: url('/union.png');
+            }
+        }
+
+        .panel-content {
+            display: none;
+        }
+    }
+}

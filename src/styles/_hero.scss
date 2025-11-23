@@ -1,0 +1,127 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('/hero-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: $ff-header;
+    overflow: hidden;
+
+    & h1 {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        font-size: $fz-hero-title;
+        line-height: 1;
+        letter-spacing: $letter-spacing;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 2px $color-basic;
+
+        &:first-child {
+            top: 5%;
+            left: 4%;
+        }
+
+        & span {
+            font-size: $fz-hero-title-caps;
+        }
+
+        &.big {
+            bottom: 15%;
+            right: 10%;
+            font-size: $fz-hero-title-big;
+            z-index: 5;
+        }
+    }
+
+    & > img {
+        position: absolute;
+        bottom: 0;
+        right: 25%;
+        width: auto;
+        max-height: 840px;
+        height: 70vh;
+        z-index: 1;
+    }
+
+    & > p {
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 17%;
+        left: 5%;
+        font-size: $fz-secondary-text;
+        font-weight: 700;
+        color: $color-basic;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+        z-index: 5;
+    }
+}
+
+@media (max-width: $tablet-bp) {
+    .hero {
+        & h1 {
+            -webkit-text-stroke: 1px $color-basic;
+            font-size: 7rem;
+            bottom: 42%;
+            left: 5%;
+
+            & span {
+                font-size: 1.2em;
+            }
+
+            &.big {
+                font-size: 10rem;
+                bottom: 15%;
+                right: 5%;
+                left: auto;
+            }
+        }
+
+        & img {
+            bottom: -10%;
+            right: 15%;
+            height: 60vh;
+        }
+
+        & p {
+            bottom: 15%;
+        }
+    }
+}
+
+@media (max-width: $mobile-bp) {
+    .hero {
+        & h1 {
+            font-size: 3rem;
+
+            &:first-child {
+                top: 50%;
+            }
+
+            & span {
+                font-size: 1.3em;
+            }
+
+            &.big {
+                font-size: 4.5rem;
+                bottom: 15%;
+                right: 5%;
+            }
+        }
+
+        & img {
+            bottom: 0;
+            right: 12%;
+            height: 50vh;
+        }
+
+        & p {
+            font-size: $fz-primary-text;
+            bottom: 5%;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@keyframes rightShowup {
+  from {
+    right: calc(400% + 43px);
+    opacity: 1;
+  }
+
+  to {
+    right: calc(100% + 43px);
+    opacity: 1;
+  }
+}

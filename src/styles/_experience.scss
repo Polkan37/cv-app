@@ -1,0 +1,87 @@
+.experience {
+
+
+    &-content {
+        max-width: 953px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        & li.active {
+
+            & .experience-list-title {
+                background: $color-primary;
+                border: 1px solid $color-primary;
+                color: $color-bg;
+            }
+            & .experience-list-content {
+                display: block;
+                height: 100%;
+            }
+        }
+        &-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 6px;
+            background: $color-bg;
+            border: 1px solid $color-primary;
+            color: $color-primary;
+            font-family: $ff-header;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: $letter-spacing;
+            text-transform: uppercase;
+
+            & p {
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                text-align: left;
+            }
+            & span {
+                font-size: 14px;
+                padding-left: 8px;
+            }
+        }
+        &-content {
+            width: 100%;
+            display: none;
+            height: 0px;
+            text-align: left;
+            padding-top: 6px;
+            padding-bottom: 38px;
+            animation: none;
+            opacity: 1;
+            transform: none;
+
+            & p {
+                padding: 0 0 6px;
+                margin: 0;
+                font-family: $ff-text;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: $letter-spacing;
+                color: $color-muted-text;
+                animation: content-fade .5s ease forwards;
+            }
+            & .content-title {
+                color: $color-basic;
+                padding-right: 6px;
+                animation: content-fade .5s ease forwards;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet-bp) {
+    .experience-list-title {
+        & span {
+            display: none;
+        }
+    }
+}

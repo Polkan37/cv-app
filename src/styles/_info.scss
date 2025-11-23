@@ -1,0 +1,66 @@
+
+.info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+
+    &-left {
+        @include flexCenter(47px);
+        flex-direction: row;
+
+    }
+    &-left>&-item {        
+        @include flexCenter(7px);
+        font-family: $ff-header;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .6);
+
+        & span {
+            color: $color-secondary;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+        & button {
+            color:$color-primary;
+            font-weight: bold;
+            font-size: 1.3rem;
+            line-height: 1;
+            width: 33px;
+            height: 33px;
+            margin-right: 6px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, .29);
+            cursor: pointer;
+        }
+
+        & button:hover {
+            border: 1px solid $color-primary;
+            background: $center-gradient;
+            background-position: center;
+        }
+        & button:active {
+            font-size: 2rem;
+            border-style: inset;
+        }
+    }
+    &-right {
+        @include flexCenter(27px);
+        flex-direction: row;
+
+    }
+    &-right>&-item.timer>.typewriter>span {
+        font-family: $ff-text;
+        font-size: .87rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        color: $color-muted-text;
+
+        & b {
+            color: $color-basic;
+        }
+    }
+}

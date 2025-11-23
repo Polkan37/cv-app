@@ -1,0 +1,117 @@
+.profile {
+    & .content-wrapper {
+        max-width: 195px;
+        text-align: center;
+        padding: 20px;
+        background: $color-bg;
+        z-index: 15;
+    }
+
+    & .profile-list {
+        list-style: none;
+        padding: 20px 0;
+        margin: 0;
+
+        & li {
+            margin-bottom: 15px;
+
+            & .list-title {
+                font-family: $ff-text;
+                font-size: $fz-h3;
+                font-weight: 700;
+                line-height: 1.3;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+
+            & p {
+                padding: 0;
+                margin: 0;
+                height: calc($fz-h2 * 1.18);
+                font-family: $ff-header;
+                font-weight: 700;
+                font-size: $fz-h2;
+                line-height: 1.2;
+                letter-spacing: $letter-spacing;
+                text-transform: uppercase;
+                color: $color-primary;
+            }
+
+            & .panel.active {
+                & .panel-header {
+                    background: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet-bp) {
+    .profile {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        max-height: 135px;
+
+        .content-wrapper {
+            max-width: 132px;
+            max-height: 132px;
+            padding: 15px;
+            order: 1;
+
+            & img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .profile-list {
+            order: 2;
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(2, auto);
+            gap: 20px 16px;
+            padding: 10px 0 0;
+
+            & li {
+                min-width: 195px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-bp) {
+    .profile {
+        display: none;
+    }
+    .hero {
+        .profile {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 16px;
+            max-height: none;
+            position: relative;
+            width: 100%;
+            z-index: 12;
+
+            .content-wrapper {
+                display: none;
+            }
+
+            .profile-list {
+                display: block;
+                margin: 0;
+                padding: 12px;
+
+                & li:last-child {
+                    display: none;
+                }
+            }
+            & > p {
+                bottom: none;
+            }
+        }
+    }
+}

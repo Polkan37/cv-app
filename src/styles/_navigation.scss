@@ -1,0 +1,178 @@
+
+
+.navigation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+
+    &-header {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+
+        li {
+            width: 151px;
+
+            .panel {
+                cursor: pointer;
+
+                &-header p {
+                    position: relative;
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0;
+                    z-index: 5;
+                }
+                &-content {
+                    border-color: $color-muted-bg;
+                    height: 36px;
+                }
+                &-description {
+                    text-transform: uppercase;
+                    padding: 8px;
+                    font-size: 10px;
+                    color: $color-muted-text;
+                }
+            }
+            .panel:hover {
+
+                    background: $center-gradient;
+
+                .panel-header{
+                    background: $center-gradient, $color-muted-bg;
+
+                    &::after {
+                        content: url('/union-white.png');
+                    }
+                }
+            }
+            .panel.active {
+
+                .panel-header{
+                    background: $color-primary;
+                    border: none;
+
+                    &::after {
+                        content: url('/union-white.png');
+                    }
+                }
+                .panel-content {
+                    border-color: $color-primary;
+                }
+            }
+        }
+    }
+    &-wrapper {
+        display: none;
+        position: absolute;
+        bottom: calc(100% + 7px);
+        left: 0;
+        max-width: 400px;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: $color-bg;
+        border: 1px solid $color-muted-bg;
+        z-index: 999;
+        overflow: hidden;
+
+        &.open {
+            display: block;
+        }
+
+        .navigation-title {
+            padding: 10px 19px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $color-muted-bg;
+
+
+            & p {
+                padding: 0;
+                margin: 0;
+                font-family: $ff-header;
+                font-size: 26px;
+                color: $color-basic;
+                font-weight: 700;
+                letter-spacing: $letter-spacing;
+                text-transform: uppercase;
+            }
+            #nav-close {
+                background: url('/x.png') no-repeat;
+                background-position: center;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        & > ul {
+            flex-direction: column;
+            padding: 21px;
+
+            & .info .info-right {
+                display: none;
+            }
+
+            & li {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: $tablet-bp) {
+    .navigation {
+        #desktop {
+            display: none;
+        }
+
+        &-header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+        &-button {
+            position: relative;
+            width: calc(50% - 4px);
+            font-family: $ff-header;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: $letter-spacing;
+            background: $color-primary;
+            border: 1px solid $color-primary;
+
+            &.open:after {
+                content: "";
+                border-left: 5px solid #0000;
+                border-right: 5px solid #0000;
+                border-bottom: 9px solid $color-primary;
+                opacity: 1;
+                width: 0;
+                height: 0;
+                transition: opacity .3s;
+                position: absolute;
+                top: -9px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &-page-title {
+            width: calc(50% - 4px);
+            text-align: center;
+            font-family: $ff-header;
+            text-transform: uppercase;
+            font-size: 18px;
+            padding: 13px;
+            margin: 0;
+            letter-spacing: $letter-spacing;
+            border: 1px solid $color-muted-bg;
+        }
+    }
+}
+@media (max-width: $mobile-bp) {}
