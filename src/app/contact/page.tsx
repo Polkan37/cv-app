@@ -1,28 +1,63 @@
 "use client";
 
-import { useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [isFormValid, setIsFormValid] = useState(false);
+  const nextUrl = typeof window !== 'undefined' ? `${window.location.origin}/sent` : '';
 
-  const handleDiscard = () => {
+  const handleDiscard = useCallback(() => {
     if (formRef.current) {
       formRef.current.reset();
       setIsFormValid(false);
     }
-  };
+  }, []);
 
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     if (formRef.current) {
       const formData = new FormData(formRef.current);
       const name = formData.get('name')?.toString().trim();
       const email = formData.get('email')?.toString().trim();
       const message = formData.get('message')?.toString().trim();
       
-      setIsFormValid(!!(name && email && message));
+      const isValid = !!(name && email && message);
+      setIsFormValid(isValid);
+      return isValid;
     }
-  };
+    return false;
+  }, []);
+
+  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    if (formRef.current) {
+      formRef.current.submit();
+    }
+  }, [validateForm]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleDiscard();
+      }
+      if (event.key === 'Enter') {
+        if (formRef.current && isFormValid) {
+          formRef.current.requestSubmit();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleDiscard, isFormValid]);
 
 
   return (
@@ -33,7 +68,16 @@ export default function Contact() {
         <div className="main-container-wrapper">
           <div className="contact-content">
             <div className="contact-form">
-              <form ref={formRef} action="https://formsubmit.co/margaritta865@gmail.com" method="POST" target='_blanck' onChange={validateForm}>
+              <form 
+                ref={formRef} 
+                action="https://formsubmit.co/margaritta865@gmail.com" 
+                method="POST" 
+                onChange={validateForm}
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="_next" value={nextUrl} />
+                <input type="hidden" name="_captcha" value="false" />
+                
                 <div className="field">
                   <label htmlFor="name">How should I call you?</label>
                   <input

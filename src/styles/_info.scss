@@ -47,6 +47,7 @@
             border-style: inset;
         }
     }
+
     &-right {
         @include flexCenter(27px);
         flex-direction: row;
@@ -64,3 +65,29 @@
         }
     }
 }
+
+#coin-template {
+    display: none;
+  }
+  
+.coin {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-image: url('/coin.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  animation: floatUpBack .3s ease-out forwards;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+}
+

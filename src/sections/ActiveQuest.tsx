@@ -13,7 +13,7 @@ const questsData: Quest[] = [
         desc: 'Fulltime project',
         position: 'Full-stack Developer',
         company: 'rockit media',
-        mission: 'To empower media buying through seamless  solutions. I build tools and chatbots that simplify workflows, automate and make every step smarter, faster, and more intuitive.'
+        mission: 'To empower marketing team efficiency I build tools and chatbots that simplify workflows, automate and make every step smarter, faster, and more intuitive.'
     },
     // {
     //     desc: 'Pet-project',
@@ -23,7 +23,9 @@ const questsData: Quest[] = [
     // },
 ];
 
-export default function ActiveQuest({ }: {}) {
+export default function ActiveQuest({ }: {
+    questsData: Quest[];
+}) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
     const [firstShow, setFirstShow] = useState(true);
 

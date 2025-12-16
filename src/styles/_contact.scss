@@ -4,6 +4,13 @@
     height: 100%;
     overflow-y: scroll;
 
+    .contact-form .btn.primary:disabled {
+        background: transparent;
+        color: $color-muted-text;
+        border: 1px solid $color-muted-text;
+        cursor: not-allowed;
+    }
+
     &-form {
         position: relative;
         overflow: visible;

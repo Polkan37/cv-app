@@ -139,7 +139,7 @@ main {
 }
 
 .content-wrapper {
-    $animation-duration: 1.8s;
+    $animation-duration: .5s;
 
     position: relative;
     background: $center-gradient, $color-bg;
@@ -174,7 +174,7 @@ main {
     & * {
         opacity: 0;
         transform: translateY(8px);
-        animation: content-fade $animation-duration ease .5s forwards;
+        animation: content-fade $animation-duration ease forwards;
     }
 }
 

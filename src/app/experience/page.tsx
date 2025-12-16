@@ -8,7 +8,7 @@ const DATA = [
     "title": "+120EXP – Developer for media buying team",
     "date": "2023 - currently",
     "location": "Research Facility, Planet X-17",
-    "description": "To empower media buying through seamless solutions. I build tools and chatbots that simplify workflows, automate and make every step smarter, faster, and more intuitive.",
+    "description": "To empower marketing team efficiency I build tools and chatbots that simplify workflows, automate and make every step smarter, faster, and more intuitive.",
     "status": "Active"
   },
   {
