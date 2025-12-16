@@ -23,9 +23,7 @@ const questsData: Quest[] = [
     // },
 ];
 
-export default function ActiveQuest({ }: {
-    questsData: Quest[];
-}) {
+export default function ActiveQuest() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
     const [firstShow, setFirstShow] = useState(true);
 
