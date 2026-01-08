@@ -5,10 +5,10 @@ import { useState } from 'react';
 const DATA = [
   {
     "id": "kd8k82nun",
-    "title": "+120EXP – Developer for media buying team",
+    "title": "+120EXP – Developer for marketing team",
     "date": "2023 - currently",
     "location": "Research Facility, Planet X-17",
-    "description": "To empower marketing team efficiency I build tools and chatbots that simplify workflows, automate and make every step smarter, faster, and more intuitive.",
+    "description": "To empower marketing team efficiency I build tools and chatbots that simplify workflows, automate and make every step smarter, faster, and more intuitive.\n\n Started as Junior Frontend Dev, grow to Frontend dev and eventually to Fullstack Developer and work with own inner projects now.",
     "status": "Active"
   },
   {
@@ -16,7 +16,7 @@ const DATA = [
     "title": "+20 SKILLS – html5/css3/JavaScript Fundamentals",
     "date": "2022",
     "location": "SoftServe",
-    "description": "",
+    "description": "Course of basics give me fundamental knowledge in web development and IT teamwork. How git works and team collaboration.",
     "status": "completed"
   },
   {
@@ -24,7 +24,7 @@ const DATA = [
     "title": "+100EXP – Marketing Odyssey",
     "date": "2017-2022",
     "location": "Newtrex",
-    "description": "",
+    "description": "Worked as a email marketing specialist, focusing on campaign optimization and customer engagement. Gained experience in data analysis, A/B testing, and marketing automation tools to drive successful email campaigns. Grew to SEO specialist and worked with large amount of sites. Make technical optimizations to improve site performance, user experience and search engine rankings, order and organize content. Gain the basics of web development.",
     "status": "completed"
   },
   {
@@ -55,41 +55,41 @@ export default function Experience() {
 
   return (
     <section className="experience">
-        <div className="section-title">
-          <h1>data log dump initialized.</h1>
-        </div>
-        <div className="main-container-wrapper">
-          <div className="experience-content">
-            <ul className="experience-list">
-              { DATA.length > 0 ? DATA.map( (item) => (
-                <li className={ activeItem === item.id ? "active" : ""} key={item.id} onClick={() => handleClick(item.id)}>
-                  <div className="experience-list-title">
-                    <p>LOG ENTRY: {[item.title]}</p>
-                    <span>DATE: {item.date}</span>
-                  </div>
-                  <div className="experience-list-content content">
-                    <p>
-                      <span className="content-title">PROJECT STATUS:</span>
-                      {item.status}
-                    </p>
-                    <p>
-                      <span className="content-title">LOCATION:</span>
-                      {item.location}
-                    </p>
-                    { item?.description && (
-                    <p>
+      <div className="section-title">
+        <h1>data log dump initialized.</h1>
+      </div>
+      <div className="main-container-wrapper">
+        <div className="experience-content">
+          <ul className="experience-list">
+            {DATA.length > 0 ? DATA.map((item) => (
+              <li className={activeItem === item.id ? "active" : ""} key={item.id} onClick={() => handleClick(item.id)}>
+                <div className="experience-list-title">
+                  <p>LOG ENTRY: {[item.title]}</p>
+                  <span>DATE: {item.date}</span>
+                </div>
+                <div className="experience-list-content content">
+                  <p>
+                    <span className="content-title">PROJECT STATUS:</span>
+                    {item.status}
+                  </p>
+                  <p>
+                    <span className="content-title">LOCATION:</span>
+                    {item.location}
+                  </p>
+                  {item?.description && (
+                    <p style={{ whiteSpace: 'pre-line' }}>
                       <span className="content-title">Descriprion:</span>
                       {item.description}
                     </p>
-                    )}
-                  </div>
-                </li>
-              )): (
-                <li><p>no any data yet</p></li>
-              )}
-            </ul>
-          </div>
+                  )}
+                </div>
+              </li>
+            )) : (
+              <li><p>no any data yet</p></li>
+            )}
+          </ul>
         </div>
+      </div>
     </section>
-    );
+  );
 }

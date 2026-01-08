@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Iceland&display=swap');
+
+/* colors */
+$color-basic: #FFFFFF;
+$color-primary: #FF1C78;
+$color-primary-rgb: rgb(255, 28, 120);
+$color-secondary: #00E1FF;
+$color-muted-text: #7A7A7A;
+$color-muted-bg: #242425;
+$color-bg: #000000;
+
+/* fonts */
+$ff-text: "Iceland", sans-serif;
+$ff-header: "Big Shoulders", sans-serif;
+
+$letter-spacing: 0.075rem;
+
+/* font sizes */
+$fz-hero-title: 9.5rem;
+$fz-hero-title-caps: 11rem;
+$fz-hero-title-big: 12rem;
+$fz-primary-text: 1rem;
+$fz-secondary-text: 1.44rem;
+$fz-h1: 1.56rem;
+$fz-h2: 1rem;
+$fz-h3: 0.8rem;
+$fz-basic-text: 0.77rem;
+$fz-small-text: 0.39rem;
+
+
+/* radius & shadow */
+$radius: 0.75rem;
+$shadow-md: 0 2px 6px rgba(0 0 0 / 0.35);
+
+/* media query break points */
+$mobile-bp: 575px;
+$tablet-bp: 950px;
+$full-screen-bp: 1780px;
+
+/* gradient */
+$top-corner-gradient: linear-gradient(242deg, rgba($color-primary-rgb, 0.3) 0%, rgba($color-primary-rgb, 0.00) 35%);
+$bottom-corner-gradient: linear-gradient(42deg, rgba($color-primary-rgb, 0.3) 0%, rgba($color-primary-rgb, 0.00) 35%);
+$center-gradient: linear-gradient(90deg, rgba($color-primary-rgb, 0) 0%, rgba($color-primary-rgb, 0.17) 50%, rgba($color-primary-rgb, 0) 100%);
+
+
+/* Custom scrollbar settings (WebKit + Firefox) */
+$scrollbar-bg: rgba($color-basic, 0.04);
+$scrollbar-thumb: rgba($color-primary-rgb, 0.22);
+$scrollbar-thumb-hover: rgba($color-primary-rgb, 0.35);
+$scrollbar-size: 10px;
+
+* {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-thumb $scrollbar-bg;
+
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+  }
+  &::-webkit-scrollbar-track {
+    background: $scrollbar-bg;
+    border-radius: $radius;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb;
+    border-radius: $radius;
+    border: 2px solid transparent; /* creates padding around thumb */
+    background-clip: content-box;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb-hover;
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 20px 10px;
+    background: $color-bg;
+    color: $color-basic;
+    font-family: $ff-text;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 583px;
+    max-height: 309px;
+    width: 100%;
+    height: 100%;
+    background: $top-corner-gradient;
+    pointer-events: none;
+    z-index: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: $full-screen-bp;
+    max-height: 100vh;
+    width: calc(100vw - 20px);
+    height: 100%;
+    overflow: hidden;
+}
+
+header {
+    margin-bottom: 20px;
+    padding: 7px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 195px auto 195px;
+    gap: 16px;
+    width: 100%;
+    height: calc(100% - 104px);
+    position: relative;
+}
+
+.content-wrapper {
+    $animation-duration: .5s;
+
+    position: relative;
+    background: $center-gradient, $color-bg;
+    box-shadow: inset 0 0 0 1px rgba($color-basic, 0.13);
+    animation: grow $animation-duration cubic-bezier(.22, .9, .35, 1) forwards;
+    overflow-y: scroll;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /* cover container */
+        pointer-events: none;
+        z-index: 2;
+
+        background-image:
+            url('/corner-tl.svg'),
+            url('/corner-tr.svg'),
+            url('/corner-bl.svg'),
+            url('/corner-br.svg');
+
+
+        background-position:
+            0% 0%,
+            100% 0%,
+            0% 100%,
+            100% 100%;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-size: 8px 8px, 8px 8px, 8px 8px, 8px 8px;
+    }
+
+    & * {
+        opacity: 0;
+        transform: translateY(8px);
+        animation: content-fade $animation-duration ease forwards;
+    }
+}
+
+.panel {
+    position: relative;
+
+    &-header {
+        position: relative;
+        display: block;
+        text-transform: uppercase;
+        font-family: $ff-header;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: $letter-spacing;
+        padding-left: 10px;
+        padding: 1px 4px;
+        color: $color-basic;
+        background: $color-muted-bg;
+        overflow: hidden;
+
+        &::after {
+            content: url('/Union.png');
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            right: 11px;
+            top: -9px;
+            z-index: 0;
+        }
+
+        &.text-dark {
+            color: $color-bg;
+        }
+    }
+
+    &-content {
+        border-left: 2px solid $color-primary;
+    }
+
+    &-desc {
+        padding: 8px 10px;
+        font-family: $ff-text;
+        font-size: $fz-primary-text;
+        color: $color-muted-text;
+        text-transform: uppercase;
+    }
+}
+
+.section-title {
+    text-align: center;
+    padding: 32px 0px;
+
+
+    & h1 {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        font-family: $ff-header;
+        font-size: $fz-h1;
+        font-weight: 700;
+        letter-spacing: $letter-spacing;
+        color: $color-basic;
+        text-transform: uppercase;
+
+        &::before {
+            content: url(/vector.webp);
+            animation: .5s ease-in 1.5s forwards rightShowup;
+            position: absolute;
+            top: 50%;
+            opacity: 0;
+            right: calc(100% + 40px);
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.main-container-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+    text-align: center;
+    padding-bottom: 55px;
+}
+
+
+@media (max-width: $tablet-bp) {
+    body::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-width: 583px;
+        max-height: 309px;
+        width: 100%;
+        height: 100%;
+        background: $bottom-corner-gradient;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 135px;
+        height: calc(100% - 140px);
+    }
+
+    .content-wrapper {
+        order: 1;
+    }
+
+    .left-sidebar {
+        order: 2;
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+
+    nav {
+        width: 100%;
+        height: 50px;
+    }
+}
+
+@media (max-width: $mobile-bp) {
+    header {
+        display: none;
+    }
+
+    main {
+        display: block;
+        position: relative;
+        height: calc(100% - 70px);
+    }
+
+    .content-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .left-sidebar {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
