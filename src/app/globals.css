@@ -42,10 +42,13 @@
   /* gradient */
   --corner-gradient: linear-gradient(242deg, rgba(var(--color-primary-rgb), 0.3) 0%, rgba(var(--color-primary-rgb), 0.00) 35%);
   --center-gradient: linear-gradient(90deg, rgba(var(--color-primary-rgb), 0) 0%, rgba(var(--color-primary-rgb), 0.17) 50%, rgba(var(--color-primary-rgb), 0) 100%);
+  
+  /* Safe area inset for mobile browsers (fallback 0px) */
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 body {
-  max-height: 100vh;
+  min-height: -webkit-fill-available;
   margin: 0;
   background: var(--color-bg);
   color: var(--color-basic);

@@ -6,6 +6,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
+    padding-bottom: var(--safe-area-inset-bottom, 0px);
 
     &-header {
         display: none;
@@ -79,7 +80,7 @@
         background: $color-bg;
         border: 1px solid $color-muted-bg;
         z-index: 999;
-        overflow: hidden;
+        overflow: scroll;
 
         &.open {
             display: block;
@@ -145,6 +146,7 @@
             font-size: 18px;
             letter-spacing: $letter-spacing;
             background: $color-primary;
+            color: $color-bg;
             border: 1px solid $color-primary;
 
             &.open:after {
