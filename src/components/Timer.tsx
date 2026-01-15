@@ -23,7 +23,7 @@ export default function Timer() {
     const now = new Date();
     const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
 
-    let intervalId: number;
+    let intervalId: number | undefined;
     const timeoutId = window.setTimeout(() => {
       update();
       intervalId = window.setInterval(update, 60 * 1000);

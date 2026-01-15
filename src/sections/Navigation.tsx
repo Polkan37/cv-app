@@ -1,6 +1,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import TopBar from './TopBar';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
@@ -88,7 +88,6 @@ export default function Navigation() {
                             return (
                                 <li key={index}>
                                     <Link
-                                        key={href}
                                         href={href}
                                         onClick={() => setIsOpen(false)}
                                     >

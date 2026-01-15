@@ -1,6 +1,6 @@
-'use client';
-
 import Typewriter from "@/components/Typewriter";
+import Image from 'next/image';
+import userIcon from '../../public/userIcon.webp';
 
 export default function Profile({ }: {}) {
     const status = { value: false, text: "open for hire"};
@@ -8,7 +8,12 @@ export default function Profile({ }: {}) {
     return (
         <section className="profile">
             <div className="content-wrapper">
-                <img src="/userIcon.jpg" alt="user icon" />
+                <Image
+                    className="profile-icon"
+                    src={userIcon}
+                    alt="user image"
+                    placeholder="blur"
+                />  
             </div>
             <ul className="profile-list">
                 <li>

@@ -1,5 +1,3 @@
-'use client';
-
 import Awards from '../components/Awards';
 import Timer from '../components/Timer';
 
