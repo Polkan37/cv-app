@@ -4,7 +4,7 @@ import Typewriter from "@/components/Typewriter";
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import Profile from "./Profile";
 import Image from 'next/image';
-import warrior from '../../public/Warrior.webp';
+import warrior from '../../public/person.webp';
 
 export default function Hero({ }: {}) {
     const isMobile = useMediaQuery('(max-width: 575px)');

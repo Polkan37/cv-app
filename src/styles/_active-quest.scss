@@ -33,7 +33,7 @@
         &.show {
             .panel-content {
                 max-height: 0px;
-                animation: panel-expand 2.3s ease 3s forwards;
+                animation: panel-expand 2.3s ease .3s forwards;
             }
         }
 
