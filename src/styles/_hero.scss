@@ -20,7 +20,7 @@
         -webkit-text-stroke: 2px $color-basic;
 
         &:first-child {
-            top: 5%;
+            top: 10%;
             left: 4%;
         }
 
@@ -36,7 +36,7 @@
         }
     }
 
-    & > img {
+    &>img {
         position: absolute;
         bottom: 0;
         right: 25%;
@@ -46,7 +46,7 @@
         z-index: 1;
     }
 
-    & > p {
+    &>p {
         padding: 0;
         margin: 0;
         position: absolute;
@@ -54,10 +54,39 @@
         left: 5%;
         font-size: $fz-secondary-text;
         font-weight: 700;
+        line-height: 1.5;
         color: $color-basic;
         text-transform: uppercase;
         letter-spacing: $letter-spacing;
         z-index: 5;
+    }
+
+    & .buttons {
+        position: absolute;
+        bottom: 12%;
+        left: 5%;
+        z-index: 5;
+
+        &>a.btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: $color-primary;
+            border: 1px solid $color-primary;
+            padding: 8px 24px;
+            margin-right: 1em;
+
+            &:hover {
+                background: $color-primary;
+                color: #fff;
+            }
+        }
+    }
+
+    & .btn {
+        color: $color-primary;
+        border: 1px solid $color-primary;
+        padding: 8px 20px;
     }
 }
 
@@ -90,6 +119,10 @@
         & p {
             bottom: 15%;
         }
+
+        & .buttons {
+            bottom: 8%;
+        }
     }
 }
 
@@ -121,7 +154,13 @@
 
         & p {
             font-size: $fz-primary-text;
-            bottom: 5%;
+            bottom: 12%;
+        }
+
+        & .buttons {
+            position: relative;
+            bottom: 8%;
+            z-index: 99;
         }
     }
 }

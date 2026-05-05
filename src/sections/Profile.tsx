@@ -3,7 +3,7 @@ import Image from 'next/image';
 import userIcon from '../../public/usericon.webp';
 
 export default function Profile({ }: {}) {
-    const status = { value: false, text: "open for hire"};
+    const status = { value: true, text: "open for hire"};
 
     return (
         <section className="profile">
@@ -24,14 +24,17 @@ export default function Profile({ }: {}) {
                     <div className="list-title">occupation</div>
                     <p><Typewriter messages={["Frontend developer"]} /></p>
                 </li>
-                <li>
+                {/* <li>
                     <div className="list-title">corporation</div>
                     <p><Typewriter messages={["Freelancing"]} /></p>
+                </li> */}
+                <li><div className="list-title">location</div>
+                    <p><Typewriter messages={["Kyiv, Ukraine"]} /></p>
                 </li>
                 <li>
                     <div className="list-title">availability</div>
                     <div className={status.value ? "panel active": "panel"}>
-                        <div className="panel-header text-dark">{status.text}</div>
+                        <div className="panel-header">{status.text}</div>
                     </div>
                 </li>
             </ul>

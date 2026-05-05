@@ -55,26 +55,31 @@ $scrollbar-size: 10px;
     scrollbar-color: $scrollbar-thumb $scrollbar-bg;
 
 
-  &::-webkit-scrollbar {
-    width: $scrollbar-size;
-    height: $scrollbar-size;
-  }
-  &::-webkit-scrollbar-track {
-    background: $scrollbar-bg;
-    border-radius: $radius;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $scrollbar-thumb;
-    border-radius: $radius;
-    border: 2px solid transparent; /* creates padding around thumb */
-    background-clip: content-box;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: $scrollbar-thumb-hover;
-  }
-  &::-webkit-scrollbar-corner {
-    background: transparent;
-  }
+    &::-webkit-scrollbar {
+        width: $scrollbar-size;
+        height: $scrollbar-size;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $scrollbar-bg;
+        border-radius: $radius;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $scrollbar-thumb;
+        border-radius: $radius;
+        border: 2px solid transparent;
+        /* creates padding around thumb */
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $scrollbar-thumb-hover;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: transparent;
+    }
 }
 
 body {
@@ -116,7 +121,7 @@ a {
     color: $color-basic;
 
     &:visited {
-        color: $color-basic; 
+        color: $color-basic;
     }
 
     &:hover,
@@ -186,6 +191,37 @@ main {
         opacity: 0;
         transform: translateY(8px);
         animation: content-fade $animation-duration ease forwards;
+    }
+}
+
+
+.card-wrapper {
+    position: relative;
+    background: $color-bg;
+    overflow-y: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /* cover container */
+        pointer-events: none;
+        z-index: 2;
+
+        background-image:
+            url('/corner-big-tl.svg'),
+            url('/corner-big-tr.svg'),
+            url('/corner-big-bl.svg'),
+            url('/corner-big-br.svg');
+
+
+        background-position:
+            0% 0%,
+            100% 0%,
+            0% 100%,
+            100% 100%;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-size: 17px 17px, 17px 17px, 17px 17px, 17px 17px;
     }
 }
 

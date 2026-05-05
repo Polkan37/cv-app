@@ -9,12 +9,12 @@ interface Quest {
     mission: string;
 }
 const questsData: Quest[] = [
-    {
-        desc: 'Fulltime project',
-        position: 'Full-stack Developer',
-        company: 'rockit media',
-        mission: 'The main goal to empower marketing team efficiency I build tools and chatbots that simplify workflows, automate and make every step smarter and faster.'
-    },
+    // {
+    //     desc: 'Fulltime project',
+    //     position: 'Full-stack Developer',
+    //     company: 'rockit media',
+    //     mission: 'The main goal to empower marketing team efficiency I build tools and chatbots that simplify workflows, automate and make every step smarter and faster.'
+    // },
     // {
     //     desc: 'Pet-project',
     //     position: 'Owner',

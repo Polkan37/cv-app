@@ -12,15 +12,28 @@ export default function Hero({ }: {}) {
     return (
         <section className="hero">
             {isMobile ? <Profile /> : ``}
-            <h1><span>F</span>ront<span>E</span>nd</h1>
+            <h1><span>F</span>rontend</h1>
+            <h1 className="big">DEV</h1>
+            <p>
+                <Typewriter messages={["React • Next.js • TypeScript"]} />
+            </p>
+            <div className="buttons">
+                <a href="https://drive.google.com/file/d/15if1j7jy4d460fQC_nRInNo4ii5Ac724/view?usp=sharing" target="_blank" rel="noopener noreferrer" type="button" className="btn">
+                    Get CV
+                </a>
+                <a href="https://github.com/Polkan37" target="_blank" rel="noopener noreferrer" type="button" className="btn">
+                    Github
+                </a>
+                <a href="/contact" type="button" className="btn">
+                    Contact
+                </a>
+            </div>
             <Image
                 className="hero-image"
                 src={warrior}
                 alt="Warrior"
                 placeholder="blur"
             />
-            <h1 className="big">DEV</h1>
-            <p><Typewriter messages={["Let's bring the future closer"]} /></p>
         </section>
     );
 }

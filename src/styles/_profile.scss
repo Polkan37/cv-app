@@ -40,6 +40,10 @@
             & .panel.active {
                 & .panel-header {
                     background: $color-primary;
+
+                    &::after {
+                        content: url('/Union-white.png');
+                    }
                 }
             }
         }

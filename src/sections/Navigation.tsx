@@ -11,7 +11,7 @@ const NAV_ITEMS: NavItem[] = [
     { href: '/', label: 'beginning', description: 'Introduction.', title: 'Home' },
     { href: '/experience', label: 'Logs', description: 'degrees, Internships, and On Job Training.', title: 'My Path' },
     { href: '/about', label: 'About me', description: 'Skill sets and Future Goals.', title: 'About me' },
-    { href: '/projects', label: 'creations', description: 'Personal Projects, Wireframes, Mockups.', title: 'Works' },
+    { href: '/projects', label: 'projects', description: 'Personal Projects, Wireframes, Mockups.', title: 'Works' },
     { href: '/contact', label: 'Contact', description: 'Open new connection if you have quest for me', title: 'Contact' },
 ];
 
