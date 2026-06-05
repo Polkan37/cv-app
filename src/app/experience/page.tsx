@@ -6,10 +6,10 @@ const DATA = [
   {
     "id": "kd8k82nun",
     "title": "+120EXP – Developer for marketing team",
-    "date": "2023 - currently",
-    "location": "Research Facility, Planet X-17",
-    "description": "To empower marketing team efficiency I build tools and chatbots that simplify workflows, automate and make every step smarter, faster, and more intuitive.\n\n Started as Junior Frontend Dev, grow to Frontend dev and eventually to Fullstack Developer and work with own inner projects now.",
-    "status": "Active"
+    "date": "2023 - 03/2026",
+    "location": "Rockit Media",
+    "description": "Building tools and web apps for marketing teams as Full-stack developer. Proficient in React, Next.js, TypeScript, Node.js/Express, and MySQL. Experienced with Vite, Redux Toolkit, Tailwind, SCSS, MUI, and PWA development. Built chatbots, automation pipelines, Telegram bots, and custom landing page builders.",
+    "status": "completed"
   },
   {
     "id": "ypb54aahn",

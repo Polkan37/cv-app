@@ -11,6 +11,15 @@
 
 
 const PROJECTS = [
+    {
+    "title": "Tip calculator app",
+    "description": "React + TypeScript tip calculator with responsive design, preset tip options, per-person split, and mobile-first layout. Built with Vite & SCSS.",
+    "technologies": ["React", "TypeScript", "Vite", "HTML", "SCSS"],
+    "image": "/projects/tip-calculator-app.jpg",
+    "published": "04.06.2026",
+    "liveLink": "https://polkan37.github.io/tip-calculator-app/",
+    "githubLink": "https://github.com/Polkan37/tip-calculator-app"
+  },
   {
     "title": "GitHub Release Notifier",
     "description": "The service allows users to subscribe to GitHub repositories and receive email notifications about new releases.",
