@@ -18,9 +18,6 @@ export default function Hero({ }: {}) {
                 <Typewriter messages={["React • Next.js • TypeScript"]} />
             </p>
             <div className="buttons">
-                <a href="https://drive.google.com/file/d/15if1j7jy4d460fQC_nRInNo4ii5Ac724/view?usp=sharing" target="_blank" rel="noopener noreferrer" type="button" className="btn">
-                    Get CV
-                </a>
                 <a href="https://github.com/Polkan37" target="_blank" rel="noopener noreferrer" type="button" className="btn">
                     Github
                 </a>
