@@ -11,15 +11,6 @@
 
 
 const PROJECTS = [
-    {
-    "title": "Tip calculator app",
-    "description": "React + TypeScript tip calculator with responsive design, preset tip options, per-person split, and mobile-first layout. Built with Vite & SCSS.",
-    "technologies": ["React", "TypeScript", "Vite", "HTML", "SCSS"],
-    "image": "/projects/tip-calculator-app.jpg",
-    "published": "04.06.2026",
-    "liveLink": "https://polkan37.github.io/tip-calculator-app/",
-    "githubLink": "https://github.com/Polkan37/tip-calculator-app"
-  },
   {
     "title": "GitHub Release Notifier",
     "description": "The service allows users to subscribe to GitHub repositories and receive email notifications about new releases.",
@@ -29,23 +20,23 @@ const PROJECTS = [
     "liveLink": "",
     "githubLink": "https://github.com/Polkan37/github-release-notifier"
   },
+    {
+    "title": "Tip calculator app",
+    "description": "React + TypeScript tip calculator with responsive design, preset tip options, per-person split, and mobile-first layout. Built with Vite & SCSS.",
+    "technologies": ["React", "TypeScript", "Vite", "HTML"],
+    "image": "/projects/tip-calculator-app.jpg",
+    "published": "04.06.2026",
+    "liveLink": "https://polkan37.github.io/tip-calculator-app/",
+    "githubLink": "https://github.com/Polkan37/tip-calculator-app"
+  },
   {
     "title": "Newsletter sign-up form",
     "description": "Responsive newsletter sign-up landing page with a simple form to collect email subscriptions and a success confirmation message after submission.",
-    "technologies": ["React", "Vite", "HTML5/SCSS"],
+    "technologies": ["React", "Vite", "HTML5/CSS"],
     "image": "/projects/newsletter-form.jpg",
     "published": "21.04.2026",
     "liveLink": "https://newsletter-sign-up-with-success-mes-woad-five.vercel.app/",
     "githubLink": "https://github.com/Polkan37/newsletter-sign-up-with-success-message"
-  },
-  {
-    "title": "Meet landing page",
-    "description": "Responsive landing page for a fictional meeting platform.",
-    "technologies": ["HTML", "CSS/SASS", "JS"],
-    "image": "/projects/meet.jpg",
-    "published": "26.03.2026",
-    "liveLink": "https://polkan37.github.io/meet-landing-page",
-    "githubLink": "https://github.com/Polkan37/meet-landing-page"
   },
   {
     "title": "Beer boutique",
