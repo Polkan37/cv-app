@@ -12,6 +12,15 @@
 
 const PROJECTS = [
   {
+    "title": "Home Monitoring System",
+    "description": "An IoT home monitoring system that collects temperature, humidity, and battery data from custom ESP32-based sensors, stores measurements, and visualizes real-time conditions and historical trends in a React dashboard.",
+    "technologies": [ "ESP32", "C++", "SHT40", "INA219", "PlatformIO", "TypeScript", "Node.js", "SQLite",  "React" ],
+    "image": "/projects/sheva.webp",
+    "published": "07.10.2026",
+    "liveLink": "",
+    "githubLink": "https://github.com/Polkan37/sheva/tree/main"
+  },
+  {
     "title": "GitHub Release Notifier",
     "description": "The service allows users to subscribe to GitHub repositories and receive email notifications about new releases.",
     "technologies": [ "TypeScript", "Node.js", "Fastify", "Prisma", "PostgreSQL", "node-cron", "Docker", "Jest"],
@@ -22,7 +31,7 @@ const PROJECTS = [
   },
     {
     "title": "Tip calculator app",
-    "description": "React + TypeScript tip calculator with responsive design, preset tip options, per-person split, and mobile-first layout. Built with Vite & SCSS.",
+    "description": "React + TypeScript tip calculator with responsive design, preset tip options, per-person split, and mobile-first layout. Built with Vite.",
     "technologies": ["React", "TypeScript", "Vite", "HTML"],
     "image": "/projects/tip-calculator-app.jpg",
     "published": "04.06.2026",

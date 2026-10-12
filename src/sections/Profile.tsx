@@ -1,6 +1,6 @@
 import Typewriter from "@/components/Typewriter";
 import Image from 'next/image';
-import userIcon from '../../public/usericon.webp';
+import userIcon from '../../public/usericon2.webp';
 
 export default function Profile({ }: {}) {
     const status = { value: true, text: "open for hire"};
@@ -22,7 +22,7 @@ export default function Profile({ }: {}) {
                 </li>
                 <li>
                     <div className="list-title">occupation</div>
-                    <p><Typewriter messages={["Frontend developer"]} /></p>
+                    <p><Typewriter messages={["Software developer"]} /></p>
                 </li>
                 {/* <li>
                     <div className="list-title">corporation</div>

@@ -38,11 +38,10 @@
 
     &>img {
         position: absolute;
-        bottom: 0;
-        right: 25%;
+        bottom: -25%;
+        left: 50%;
         width: auto;
-        max-height: 840px;
-        height: 70vh;
+        height: 94vh;
         z-index: 1;
     }
 
