@@ -1,6 +1,6 @@
 import Typewriter from "@/components/Typewriter";
 import Image from 'next/image';
-import userIcon from '../../public/usericon2.webp';
+import userIcon from '../../public/userIcon2.webp';
 
 export default function Profile({ }: {}) {
     const status = { value: true, text: "open for hire"};
